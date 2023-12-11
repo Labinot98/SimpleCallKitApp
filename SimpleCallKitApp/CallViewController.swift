@@ -6,14 +6,11 @@
 //
 
 import UIKit
-import AgoraRtcKit
-import CallKit
 import AVFoundation
 
 class CallViewController: UIViewController {
     var viewModel: CallViewModel!
     var callView: CallView!
-    var provider: CXProvider?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,38 +63,4 @@ extension CallViewController: CallViewDelegate {
     func didTapCallButton() {
         viewModel.toggleCallState()
     }
-}
-
-extension CallViewController: AgoraRtcEngineDelegate {
-// Implement Agora delegate methods here
-}
-
-extension CallViewController: CXProviderDelegate {
-    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-        // Handle answer call action (e.g., join Agora channel)
-        action.fulfill()
-    }
-    
-    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-        action.fulfill()
-        if action.callUUID == viewModel.getCallUUID() {
-            if action.isComplete {
-                // Call was declined by the user
-                viewModel.callState = .disconnected
-            }
-        }
-    }
-
-
-      func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
-          // Start audio session handling for the call
-      }
-
-      func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
-          // End audio session handling for the call
-      }
-
-      func providerDidReset(_ provider: CXProvider) {
-          // Handle provider reset if needed
-      }
 }

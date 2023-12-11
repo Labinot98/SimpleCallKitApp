@@ -13,15 +13,18 @@ import CallKit
 class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
     var window: UIWindow?
     var voipRegistry: PKPushRegistry!
+    var callManager: DefaultCallManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         voipRegistry = PKPushRegistry(queue: DispatchQueue.main)
         voipRegistry.delegate = self
         voipRegistry.desiredPushTypes = [.voIP]
+        
+        callManager = DefaultCallManager()
         return true
     }
 
-    // MARK: - PKPushRegistryDelegate
+    // Handle incoming calls using CallKit
     func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType) {
         guard type == .voIP, let callUUIDString = payload.dictionaryPayload["callUUID"] as? String,
               let callUUID = UUID(uuidString: callUUIDString) else {
@@ -32,16 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
         update.remoteHandle = CXHandle(type: .generic, value: "Caller Name")
         update.hasVideo = false
 
-        let providerConfiguration = CXProviderConfiguration(localizedName: "SimpleCallKitApp")
-        let provider = CXProvider(configuration: providerConfiguration)
-        
-        // Report the incoming call to CallKit
-        provider.reportNewIncomingCall(with: callUUID, update: update) { error in
-            if let error = error {
-                print("Failed to report incoming call: \(error.localizedDescription)")
+        callManager.reportIncomingCall(with: callUUID, update: update) { success in
+            if !success {
+                // Handle failure to report incoming call
             }
         }
     }
+
+    // Implement other PKPushRegistryDelegate methods if necessary
+
 
     func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
         // Handle push token registration, if needed
