@@ -25,7 +25,9 @@ class CallViewModel {
 
     var callState: CallState = .idle {
         didSet {
-            delegate?.updateUI()
+            DispatchQueue.main.async { [weak self] in
+                self?.delegate?.updateUI()
+            }
         }
     }
 
@@ -42,6 +44,10 @@ class CallViewModel {
         case .connected, .connecting:
             endCall()
         }
+    }
+
+    func getCallUUID() -> UUID? {
+        return callUUID
     }
 
     private func initiateCall() {

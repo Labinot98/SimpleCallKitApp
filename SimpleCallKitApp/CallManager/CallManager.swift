@@ -20,6 +20,10 @@ protocol CallManagerDelegate: AnyObject {
 
 class DefaultCallManager: CallManagerProtocol {
     weak var delegate: CallManagerDelegate?
+    
+    init(delegate: CallManagerDelegate? = nil) {
+        self.delegate = delegate
+    }
 
     func startCall(completion: @escaping (Bool, UUID?) -> Void) {
         // Simulating CallKit report new incoming call

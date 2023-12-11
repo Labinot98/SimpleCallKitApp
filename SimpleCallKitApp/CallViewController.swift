@@ -10,24 +10,25 @@ import AgoraRtcKit
 import CallKit
 import AVFoundation
 
-class CallViewController: UIViewController, CallViewModelDelegate, CallViewDelegate {
+class CallViewController: UIViewController {
     var viewModel: CallViewModel!
     var callView: CallView!
-
+    var provider: CXProvider?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let callManager = DefaultCallManager()
-               viewModel = CallViewModel(callManager: callManager)
-               viewModel.delegate = self
-
-               callView = CallView()
-               callView.delegate = self
-               view.addSubview(callView)
-
-               setupConstraints()
-           }
-
+        viewModel = CallViewModel(callManager: callManager)
+        viewModel.delegate = self
+        
+        callView = CallView()
+        callView.delegate = self
+        view.addSubview(callView)
+        
+        setupConstraints()
+    }
+    
     func setupConstraints() {
         callView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -37,20 +38,19 @@ class CallViewController: UIViewController, CallViewModelDelegate, CallViewDeleg
             callView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+}
 
-    // MARK: - CallViewModelDelegate
+// MARK: - CallViewModelDelegate
+extension CallViewController: CallViewModelDelegate {
     func updateUI() {
         DispatchQueue.main.async {
             switch self.viewModel.callState {
             case .connecting:
-                // Update UI to show connecting state
                 self.callView.statusLabel.text = "Connecting... 👀"
             case .connected:
-                // Update UI to show connected state
                 self.callView.statusLabel.text = "Connected ✅"
                 self.callView.callButton.setTitle("End Call", for: .normal)
             case .disconnected:
-                // Update UI to show disconnected state
                 self.callView.statusLabel.text = "Disconnected ❌"
                 self.callView.callButton.setTitle("Call", for: .normal)
             default:
@@ -59,10 +59,12 @@ class CallViewController: UIViewController, CallViewModelDelegate, CallViewDeleg
         }
     }
 
-    // MARK: - CallViewDelegate
+}
+
+// MARK: - CallViewDelegate
+extension CallViewController: CallViewDelegate {
     func didTapCallButton() {
         viewModel.toggleCallState()
-//        updateUI()
     }
 }
 
@@ -77,19 +79,25 @@ extension CallViewController: CXProviderDelegate {
     }
     
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-        // Handle end call action (e.g., leave Agora channel)
         action.fulfill()
+        if action.callUUID == viewModel.getCallUUID() {
+            if action.isComplete {
+                // Call was declined by the user
+                viewModel.callState = .disconnected
+            }
+        }
     }
-    
-    func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
-        // Start audio session handling for the call
-    }
-    
-    func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
-        // End audio session handling for the call
-    }
-    
-    func providerDidReset(_ provider: CXProvider) {
-        // Handle provider reset if needed
-    }
+
+
+      func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
+          // Start audio session handling for the call
+      }
+
+      func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
+          // End audio session handling for the call
+      }
+
+      func providerDidReset(_ provider: CXProvider) {
+          // Handle provider reset if needed
+      }
 }
