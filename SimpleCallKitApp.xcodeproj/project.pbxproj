@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		2D9D55DD2B25D91C0092637D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D55DC2B25D91C0092637D /* AppDelegate.swift */; };
 		2D9D55DF2B25D91C0092637D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D55DE2B25D91C0092637D /* SceneDelegate.swift */; };
-		2D9D55E12B25D91C0092637D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D55E02B25D91C0092637D /* ViewController.swift */; };
-		2D9D55E42B25D91C0092637D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D55E22B25D91C0092637D /* Main.storyboard */; };
+		2D9D55E12B25D91C0092637D /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D55E02B25D91C0092637D /* CallViewController.swift */; };
 		2D9D55E62B25D91F0092637D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D55E52B25D91F0092637D /* Assets.xcassets */; };
-		2D9D55E92B25D91F0092637D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D55E72B25D91F0092637D /* LaunchScreen.storyboard */; };
+		2D9D55F22B25DCDC0092637D /* AIAEC in Frameworks */ = {isa = PBXBuildFile; productRef = 2D9D55F12B25DCDC0092637D /* AIAEC */; };
+		2D9D55F42B25DCDC0092637D /* AINS in Frameworks */ = {isa = PBXBuildFile; productRef = 2D9D55F32B25DCDC0092637D /* AINS */; };
+		2D9D55F62B25DCDC0092637D /* AudioBeauty in Frameworks */ = {isa = PBXBuildFile; productRef = 2D9D55F52B25DCDC0092637D /* AudioBeauty */; };
+		2D9D55F82B25DCDC0092637D /* DRM in Frameworks */ = {isa = PBXBuildFile; productRef = 2D9D55F72B25DCDC0092637D /* DRM */; };
+		2D9D55FA2B25DCDC0092637D /* RtcBasic in Frameworks */ = {isa = PBXBuildFile; productRef = 2D9D55F92B25DCDC0092637D /* RtcBasic */; };
+		2D9D55FC2B25DCDC0092637D /* SpatialAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 2D9D55FB2B25DCDC0092637D /* SpatialAudio */; };
+		2D9D56002B25EA2E0092637D /* CallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D55FF2B25EA2E0092637D /* CallViewModel.swift */; };
+		2D9D56032B2605790092637D /* CallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D56022B2605790092637D /* CallView.swift */; };
+		2D9D56072B27053D0092637D /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D56062B27053D0092637D /* CallManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D9D55D92B25D91C0092637D /* SimpleCallKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCallKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D9D55DC2B25D91C0092637D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D9D55DE2B25D91C0092637D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D9D55E02B25D91C0092637D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2D9D55E32B25D91C0092637D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D9D55E02B25D91C0092637D /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		2D9D55E52B25D91F0092637D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2D9D55E82B25D91F0092637D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D9D55EA2B25D91F0092637D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D9D55FF2B25EA2E0092637D /* CallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewModel.swift; sourceTree = "<group>"; };
+		2D9D56022B2605790092637D /* CallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
+		2D9D56062B27053D0092637D /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9D55FC2B25DCDC0092637D /* SpatialAudio in Frameworks */,
+				2D9D55F62B25DCDC0092637D /* AudioBeauty in Frameworks */,
+				2D9D55F22B25DCDC0092637D /* AIAEC in Frameworks */,
+				2D9D55F82B25DCDC0092637D /* DRM in Frameworks */,
+				2D9D55F42B25DCDC0092637D /* AINS in Frameworks */,
+				2D9D55FA2B25DCDC0092637D /* RtcBasic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +70,56 @@
 		2D9D55DB2B25D91C0092637D /* SimpleCallKitApp */ = {
 			isa = PBXGroup;
 			children = (
-				2D9D55DC2B25D91C0092637D /* AppDelegate.swift */,
-				2D9D55DE2B25D91C0092637D /* SceneDelegate.swift */,
-				2D9D55E02B25D91C0092637D /* ViewController.swift */,
-				2D9D55E22B25D91C0092637D /* Main.storyboard */,
+				2D9D56052B27051C0092637D /* AppDelegate */,
+				2D9D56042B2705070092637D /* CallManager */,
+				2D9D55FD2B25EA140092637D /* Home */,
+				2D9D55E02B25D91C0092637D /* CallViewController.swift */,
 				2D9D55E52B25D91F0092637D /* Assets.xcassets */,
-				2D9D55E72B25D91F0092637D /* LaunchScreen.storyboard */,
 				2D9D55EA2B25D91F0092637D /* Info.plist */,
 			);
 			path = SimpleCallKitApp;
+			sourceTree = "<group>";
+		};
+		2D9D55FD2B25EA140092637D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D9D56012B26056A0092637D /* View */,
+				2D9D55FE2B25EA1A0092637D /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2D9D55FE2B25EA1A0092637D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D9D55FF2B25EA2E0092637D /* CallViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D9D56012B26056A0092637D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D9D56022B2605790092637D /* CallView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D9D56042B2705070092637D /* CallManager */ = {
+			isa = PBXGroup;
+			children = (
+				2D9D56062B27053D0092637D /* CallManager.swift */,
+			);
+			path = CallManager;
+			sourceTree = "<group>";
+		};
+		2D9D56052B27051C0092637D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2D9D55DC2B25D91C0092637D /* AppDelegate.swift */,
+				2D9D55DE2B25D91C0092637D /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +138,14 @@
 			dependencies = (
 			);
 			name = SimpleCallKitApp;
+			packageProductDependencies = (
+				2D9D55F12B25DCDC0092637D /* AIAEC */,
+				2D9D55F32B25DCDC0092637D /* AINS */,
+				2D9D55F52B25DCDC0092637D /* AudioBeauty */,
+				2D9D55F72B25DCDC0092637D /* DRM */,
+				2D9D55F92B25DCDC0092637D /* RtcBasic */,
+				2D9D55FB2B25DCDC0092637D /* SpatialAudio */,
+			);
 			productName = SimpleCallKitApp;
 			productReference = 2D9D55D92B25D91C0092637D /* SimpleCallKitApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +174,9 @@
 				Base,
 			);
 			mainGroup = 2D9D55D02B25D91C0092637D;
+			packageReferences = (
+				2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */,
+			);
 			productRefGroup = 2D9D55DA2B25D91C0092637D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D9D55E92B25D91F0092637D /* LaunchScreen.storyboard in Resources */,
 				2D9D55E62B25D91F0092637D /* Assets.xcassets in Resources */,
-				2D9D55E42B25D91C0092637D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D9D55E12B25D91C0092637D /* ViewController.swift in Sources */,
+				2D9D55E12B25D91C0092637D /* CallViewController.swift in Sources */,
 				2D9D55DD2B25D91C0092637D /* AppDelegate.swift in Sources */,
+				2D9D56002B25EA2E0092637D /* CallViewModel.swift in Sources */,
+				2D9D56072B27053D0092637D /* CallManager.swift in Sources */,
 				2D9D55DF2B25D91C0092637D /* SceneDelegate.swift in Sources */,
+				2D9D56032B2605790092637D /* CallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2D9D55E22B25D91C0092637D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D9D55E32B25D91C0092637D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2D9D55E72B25D91F0092637D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D9D55E82B25D91F0092637D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2D9D55EB2B25D91F0092637D /* Debug */ = {
@@ -295,11 +343,13 @@
 				DEVELOPMENT_TEAM = MMLNF3BF4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCallKitApp/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access the microphone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +357,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ClickITDev.SimpleCallKitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,11 +376,13 @@
 				DEVELOPMENT_TEAM = MMLNF3BF4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCallKitApp/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access the microphone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +390,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ClickITDev.SimpleCallKitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -363,6 +421,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraAudio_iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D9D55F12B25DCDC0092637D /* AIAEC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = AIAEC;
+		};
+		2D9D55F32B25DCDC0092637D /* AINS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = AINS;
+		};
+		2D9D55F52B25DCDC0092637D /* AudioBeauty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = AudioBeauty;
+		};
+		2D9D55F72B25DCDC0092637D /* DRM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = DRM;
+		};
+		2D9D55F92B25DCDC0092637D /* RtcBasic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = RtcBasic;
+		};
+		2D9D55FB2B25DCDC0092637D /* SpatialAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D9D55F02B25DCDC0092637D /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = SpatialAudio;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D9D55D12B25D91C0092637D /* Project object */;
 }
