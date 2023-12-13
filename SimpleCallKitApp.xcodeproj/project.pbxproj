@@ -343,6 +343,7 @@
 				DEVELOPMENT_TEAM = MMLNF3BF4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCallKitApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access the microphone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -376,6 +377,7 @@
 				DEVELOPMENT_TEAM = MMLNF3BF4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCallKitApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access the microphone.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
